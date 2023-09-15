@@ -1,0 +1,37 @@
+
+<div class="body">
+    <div class="login">
+        <img src="../../../assets/img/user.png">
+        <h1>Login</h1>
+        <mat-spinner class="spinner" diameter="50" *ngIf="loading"></mat-spinner>
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="user">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password"  autocomplete="off" formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
+
+        </form>
+
+        <!-- <div *ngIf="form.get('user')?.errors && form.get('user')?.dirty">
+            
+        </div>
+
+    <div *ngIf="form.get('password')?.errors && form.get('password')?.dirty">
+        <p *ngIf="form.get('password')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="form.get('password')?.hasError('minlength')">Debe tener al menos 6 caracteres</p>
+    </div> -->
+
+                
+        
+    </div>
+
+
+      
+
+</div>
