@@ -5,3 +5,37 @@
     
    
   }
+
+  /* Structure */
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.container {
+  width: 95%;
+  padding: 10px;
+  margin: auto
+  
+}
+.icon-td {
+  text-align: right;
+  
+}
+
+.pointer {
+  cursor: pointer
+}
+
+.search-icon {
+  color: blue
+}
+.edit-icon {
+  color:black
+}
+.delete-icon {
+  color:red
+}
