@@ -1,8 +1,27 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table'; 
 import { Usuario } from 'src/app/interfaces/usuario';
+import { MatPaginator } from '@angular/material/paginator';
 
 const ELEMENT_DATA: Usuario[] = [
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
+  {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
+  {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
+  {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
   {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
   {id: 2, nombre: 'Guillermo Adrián', apellido: 'Flores', sexo: 'masculino'},
   {id: 3, nombre: 'Antonio', apellido: 'Flores Colautti', sexo: 'masculino'},
@@ -23,6 +42,12 @@ export class UsuariosComponent {
     applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
     }
 
 }
