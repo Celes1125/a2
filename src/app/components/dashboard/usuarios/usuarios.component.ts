@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table'; 
 import { Usuario } from 'src/app/interfaces/usuario';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 const ELEMENT_DATA: Usuario[] = [
   {id: 1, nombre: 'María Celeste', apellido: 'Colautti', sexo: 'femenino'},
@@ -45,9 +46,12 @@ export class UsuariosComponent {
     }
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
-    
+
+    @ViewChild(MatSort) sort!: MatSort;
+
     ngAfterViewInit() {
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
 
 }
